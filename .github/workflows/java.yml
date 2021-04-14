@@ -41,6 +41,7 @@ jobs:
     - env:
         SPARK_VERSION: ${{ matrix.spark }}
         SCALA_VERSION: ${{ matrix.scala }}
+        SPARK_LOCAL_IP: "127.0.0.1"
       run: mvn -q clean install -Dscala=${SCALA_VERSION:0:4} -Dspark=${SPARK_VERSION:0:3}
     - run: mkdir staging
     - run: cp core/target/sedona-*.jar staging
