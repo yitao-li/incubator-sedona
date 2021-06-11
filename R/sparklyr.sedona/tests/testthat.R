@@ -4,6 +4,7 @@ library(testthat)
 
 # increase timeout for downloading Apache Spark tgz files
 options(timeout = 600)
+options(sparklyr.log.console = TRUE)
 
 if (identical(Sys.getenv("NOT_CRAN"), "true")) {
   on.exit({
